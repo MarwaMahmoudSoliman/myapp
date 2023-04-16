@@ -30,18 +30,11 @@ const students = [
 
 const studentsFunction = (request, response) => {
     response.render('students',{layout:false ,students});
-    
-
+  
 };
 
 app.get('/students', studentsFunction)
-app.get('/students/:id', (req, res) => {
-    const id = req.params.id;
- const student= students.find((item)=>{
-       return item.id ==id ;
-  });
 
-  res.render("student",{ layout :false , student:student});
    
 });
 app.listen(3000);
